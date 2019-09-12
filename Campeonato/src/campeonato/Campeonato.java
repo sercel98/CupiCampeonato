@@ -5,6 +5,9 @@
  */
 package campeonato;
 
+import campeonato.utils.ConnectionDb;
+import campeonato.views.GUIPrincipal;
+
 /**
  *
  * @author Sergop
@@ -16,6 +19,9 @@ public class Campeonato {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        GUIPrincipal gUIPrincipal = new GUIPrincipal();
+        gUIPrincipal.setVisible(true);
+        ConnectionDb.getInstance();
     }
     
 }

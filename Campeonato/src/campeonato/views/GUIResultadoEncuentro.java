@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package campeonato;
+package campeonato.views;
 
 /**
  *
  * @author Sergop
  */
-public class GUIIntegrantesEquipo extends javax.swing.JFrame {
+public class GUIResultadoEncuentro extends javax.swing.JFrame {
 
     /**
-     * Creates new form GUIIntegrantesEquipo
+     * Creates new form GUIResultadoEncuentro
      */
-    public GUIIntegrantesEquipo() {
+    public GUIResultadoEncuentro() {
         initComponents();
     }
 
@@ -27,13 +27,13 @@ public class GUIIntegrantesEquipo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblNombre = new javax.swing.JLabel();
-        txtNombreEquipo = new javax.swing.JTextField();
+        lblFechaEncuentro = new javax.swing.JLabel();
+        txtFechaEncuentro = new javax.swing.JTextField();
         btnGenerarReporte = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblNombre.setText("Nombre del Equipo");
+        lblFechaEncuentro.setText("Fecha del encuentro");
 
         btnGenerarReporte.setText("Generar Reporte");
 
@@ -42,33 +42,33 @@ public class GUIIntegrantesEquipo extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(91, 91, 91)
+                .addGap(105, 105, 105)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGenerarReporte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtNombreEquipo))
-                .addContainerGap(98, Short.MAX_VALUE))
+                    .addComponent(lblFechaEncuentro)
+                    .addComponent(txtFechaEncuentro, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(lblNombre)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(84, Short.MAX_VALUE)
+                .addComponent(lblFechaEncuentro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNombreEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtFechaEncuentro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnGenerarReporte)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addGap(63, 63, 63))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-   
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGenerarReporte;
-    private javax.swing.JLabel lblNombre;
-    private javax.swing.JTextField txtNombreEquipo;
+    private javax.swing.JLabel lblFechaEncuentro;
+    private javax.swing.JTextField txtFechaEncuentro;
     // End of variables declaration//GEN-END:variables
 }

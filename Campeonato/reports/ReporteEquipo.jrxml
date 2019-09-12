@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="31d0de39-1e54-438c-8ee8-b9c1816c28a5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="EQUIPO_NOMBRE" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     EQUIPO."NITUNIVERSIDAD" AS EQUIPO_NITUNIVERSIDAD,
+     EQUIPO."NOMBRE" AS EQUIPO_NOMBRE,
+     EQUIPO."ABREVIATURA" AS EQUIPO_ABREVIATURA,
+     EQUIPO."FECHAFUNDACION" AS EQUIPO_FECHAFUNDACION
+FROM
+     "CAMPEONATO"."EQUIPO" EQUIPO
+WHERE
+     UPPER(EQUIPO."NOMBRE") like CONCAT( UPPER($P{EQUIPO_NOMBRE}), '%' )]]>
+	</queryString>
+	<field name="EQUIPO_NITUNIVERSIDAD" class="java.math.BigDecimal"/>
+	<field name="EQUIPO_NOMBRE" class="java.lang.String"/>
+	<field name="EQUIPO_ABREVIATURA" class="java.lang.String"/>
+	<field name="EQUIPO_FECHAFUNDACION" class="java.sql.Timestamp"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="138" height="20" uuid="d6b5959e-7087-4cdf-90ad-931425a4b388"/>
+				<text><![CDATA[EQUIPO_NITUNIVERSIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="0" width="138" height="20" uuid="35d8cbae-a5f6-42ee-bea1-b2f903b46f4a"/>
+				<text><![CDATA[EQUIPO_NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="138" height="20" uuid="1cdf5163-e2e9-43fd-85cf-da47b13682d7"/>
+				<text><![CDATA[EQUIPO_ABREVIATURA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="0" width="138" height="20" uuid="fd8c96bf-2b17-4bc5-8650-78eca48371ef"/>
+				<text><![CDATA[EQUIPO_FECHAFUNDACION]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="138" height="20" uuid="d1384633-4be5-4a28-837d-d7aa8eb7e6b2"/>
+				<textFieldExpression><![CDATA[$F{EQUIPO_NITUNIVERSIDAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="0" width="138" height="20" uuid="a2cca758-5a39-42ef-b363-9bf63ec20fee"/>
+				<textFieldExpression><![CDATA[$F{EQUIPO_NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="0" width="138" height="20" uuid="eba631c6-7723-4493-9944-2500a8f1529e"/>
+				<textFieldExpression><![CDATA[$F{EQUIPO_ABREVIATURA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="0" width="138" height="20" uuid="5d50f6f9-ce8a-41b6-921a-bd22def59fe9"/>
+				<textFieldExpression><![CDATA[$F{EQUIPO_FECHAFUNDACION}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

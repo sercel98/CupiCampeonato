@@ -3,7 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package campeonato;
+package campeonato.views;
+
+import campeonato.utils.Utils;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -38,6 +42,11 @@ public class GUIReporteJugador extends javax.swing.JFrame {
         lblTipoDocumento.setText("Tipo Documento");
 
         btnGenerarReporte.setText("Generar Reporte");
+        btnGenerarReporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReporteActionPerformed(evt);
+            }
+        });
 
         lblNumeroDoc.setText("Número de Documento");
 
@@ -78,6 +87,14 @@ public class GUIReporteJugador extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteActionPerformed
+        // TODO add your handling code here:
+        Map<String,Object> parametros = new HashMap<>();
+        parametros.put("DOCUMENTOJUGADOR", Integer.parseInt(txtNumeroDoc.getText()));
+        parametros.put("TIPODOCUMENTOJUGADOR", comboTipoDoc.getSelectedItem());
+        Utils.abrirReporte(parametros, ".\\reports\\ReporteJugador.jasper", "Jugador " + txtNumeroDoc.getText());
+    }//GEN-LAST:event_btnGenerarReporteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
