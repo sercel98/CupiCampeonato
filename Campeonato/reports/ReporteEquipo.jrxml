@@ -15,7 +15,7 @@
 FROM
      "CAMPEONATO"."EQUIPO" EQUIPO
 WHERE
-     UPPER(EQUIPO."NOMBRE") like CONCAT( UPPER($P{EQUIPO_NOMBRE}), '%' )]]>
+     UPPER(EQUIPO."NOMBRE") like CONCAT('%',CONCAT( UPPER($P{EQUIPO_NOMBRE}), '%' ))]]>
 	</queryString>
 	<field name="EQUIPO_NITUNIVERSIDAD" class="java.math.BigDecimal"/>
 	<field name="EQUIPO_NOMBRE" class="java.lang.String"/>
@@ -34,19 +34,19 @@ WHERE
 		<band height="61" splitType="Stretch">
 			<staticText>
 				<reportElement x="0" y="0" width="138" height="20" uuid="d6b5959e-7087-4cdf-90ad-931425a4b388"/>
-				<text><![CDATA[EQUIPO_NITUNIVERSIDAD]]></text>
+				<text><![CDATA[NIT]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="138" y="0" width="138" height="20" uuid="35d8cbae-a5f6-42ee-bea1-b2f903b46f4a"/>
-				<text><![CDATA[EQUIPO_NOMBRE]]></text>
+				<text><![CDATA[NOMBRE]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="276" y="0" width="138" height="20" uuid="1cdf5163-e2e9-43fd-85cf-da47b13682d7"/>
-				<text><![CDATA[EQUIPO_ABREVIATURA]]></text>
+				<text><![CDATA[ABREVIATURA]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="414" y="0" width="138" height="20" uuid="fd8c96bf-2b17-4bc5-8650-78eca48371ef"/>
-				<text><![CDATA[EQUIPO_FECHAFUNDACION]]></text>
+				<text><![CDATA[FECHA FUNDACION]]></text>
 			</staticText>
 		</band>
 	</columnHeader>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ca68fede-8428-483a-86e6-cc3ee865d60b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="EDICIONCAMPEONATO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     EQUIPO."NOMBRE" AS EQUIPO_NOMBRE,
+     EQUIPO."ABREVIATURA" AS EQUIPO_ABREVIATURA,
+     EQUIPO."FECHAFUNDACION" AS EQUIPO_FECHAFUNDACION,
+     EQUIPOCAMPEONATO."EDICIONCAMPEONATO" AS EDICION_CAMPEONATO,
+     UNIVERSIDAD."NITUNIVERSIDAD" AS UNIVERSIDAD_NITUNIVERSIDAD,
+     UNIVERSIDAD."CODIGOCIUDAD" AS UNIVERSIDAD_CODIGOCIUDAD,
+     UNIVERSIDAD."NOMBRE" AS UNIVERSIDAD_NOMBRE,
+     UNIVERSIDAD."RAZONSOCIAL" AS UNIVERSIDAD_RAZONSOCIAL,
+     UNIVERSIDAD."DIRECCION" AS UNIVERSIDAD_DIRECCION
+FROM
+     "CAMPEONATO"."EQUIPO" EQUIPO INNER JOIN "CAMPEONATO"."EQUIPOCAMPEONATO" EQUIPOCAMPEONATO ON EQUIPO."NITUNIVERSIDAD" = EQUIPOCAMPEONATO."NITUNIVERSIDAD"
+     INNER JOIN "CAMPEONATO"."UNIVERSIDAD" UNIVERSIDAD ON EQUIPO."NITUNIVERSIDAD" = UNIVERSIDAD."NITUNIVERSIDAD"
+WHERE
+     UPPER(EQUIPOCAMPEONATO."EDICIONCAMPEONATO") = UPPER($P{EDICIONCAMPEONATO})]]>
+	</queryString>
+	<field name="EQUIPO_NOMBRE" class="java.lang.String"/>
+	<field name="EQUIPO_ABREVIATURA" class="java.lang.String"/>
+	<field name="EQUIPO_FECHAFUNDACION" class="java.sql.Timestamp"/>
+	<field name="EDICION_CAMPEONATO" class="java.lang.String"/>
+	<field name="UNIVERSIDAD_NITUNIVERSIDAD" class="java.math.BigDecimal"/>
+	<field name="UNIVERSIDAD_CODIGOCIUDAD" class="java.math.BigDecimal"/>
+	<field name="UNIVERSIDAD_NOMBRE" class="java.lang.String"/>
+	<field name="UNIVERSIDAD_RAZONSOCIAL" class="java.lang.String"/>
+	<field name="UNIVERSIDAD_DIRECCION" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="89" height="20" uuid="956cf89c-c9ee-4c07-9cbb-fcf5acd294b0"/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="0" width="89" height="20" uuid="57f87403-e7f5-454b-9c25-aab2a79e01a1"/>
+				<text><![CDATA[ABREVIATURA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="178" y="0" width="102" height="20" uuid="3a4d4610-e6c8-4ac4-bc81-36f244c59500"/>
+				<text><![CDATA[FECHA FUNDACION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="66" height="20" uuid="67c87524-7caf-4a35-ae89-06ae6684c72c"/>
+				<text><![CDATA[EDICION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="0" width="89" height="20" uuid="29047097-6c7e-4864-9ed6-b6289899efdb"/>
+				<text><![CDATA[NIT UNIVERSIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="0" width="120" height="20" uuid="26c2d921-666c-4c0e-b6f9-a3c6d4e2abc7"/>
+				<text><![CDATA[NOMBRE UNIVERSIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="623" y="0" width="89" height="20" uuid="38b82d77-090d-4879-9980-87cd0bb3666a"/>
+				<text><![CDATA[RAZON SOCIAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="712" y="0" width="89" height="20" uuid="575b1155-e872-4a9c-8376-2ee78e0e547e"/>
+				<text><![CDATA[DIRECCION]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="89" height="20" uuid="d79f11a7-b843-436e-895e-716f78f8ceb0"/>
+				<textFieldExpression><![CDATA[$F{EQUIPO_NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="89" y="0" width="89" height="20" uuid="c6a2ccfa-8492-4cfa-baea-dcae12d1e07a"/>
+				<textFieldExpression><![CDATA[$F{EQUIPO_ABREVIATURA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="178" y="0" width="102" height="20" uuid="00a2f1ca-9c86-46f7-82cb-2fa60188b0cf"/>
+				<textFieldExpression><![CDATA[$F{EQUIPO_FECHAFUNDACION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="66" height="20" uuid="c5a5dd0e-3935-47e0-a2cd-c5477787c493"/>
+				<textFieldExpression><![CDATA[$F{EDICION_CAMPEONATO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="356" y="0" width="89" height="20" uuid="20bcaaab-9aa9-45cd-995b-b9beb21aac26"/>
+				<textFieldExpression><![CDATA[$F{UNIVERSIDAD_NITUNIVERSIDAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="0" width="120" height="20" uuid="e55c15e3-40c7-4ee6-9924-0c9244389f47"/>
+				<textFieldExpression><![CDATA[$F{UNIVERSIDAD_NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="623" y="0" width="89" height="20" uuid="0c8fe853-8b81-45d3-a929-a11dc9b3c4a1"/>
+				<textFieldExpression><![CDATA[$F{UNIVERSIDAD_RAZONSOCIAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="712" y="0" width="89" height="20" uuid="09e74cf0-fbdf-4506-8209-02ffb0c3a4c4"/>
+				<textFieldExpression><![CDATA[$F{UNIVERSIDAD_DIRECCION}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -43,31 +43,31 @@ AND JUGADOR."TIPODOCUMENTOJUGADOR" LIKE UPPER($P{TIPODOCUMENTOJUGADOR})]]>
 		<band height="61" splitType="Stretch">
 			<staticText>
 				<reportElement x="0" y="0" width="79" height="20" uuid="a0c9e376-9d0d-4bd4-bd58-264827c8b4e5"/>
-				<text><![CDATA[JUGADOR_TIPODOCUMENTOJUGADOR]]></text>
+				<text><![CDATA[TIPO DOC]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="79" y="0" width="79" height="20" uuid="aa8d2f7f-5cfd-4a53-ad4e-e78bd0c2b61e"/>
-				<text><![CDATA[JUGADOR_DOCUMENTOJUGADOR]]></text>
+				<text><![CDATA[DOCUMENTO]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="158" y="0" width="79" height="20" uuid="45554d89-3c1c-4a9d-8dde-3e0c265156a0"/>
-				<text><![CDATA[JUGADOR_NOMBRES]]></text>
+				<text><![CDATA[NOMBRE]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="237" y="0" width="79" height="20" uuid="fa66ece2-55f3-4cd8-ada9-9c52aa459a76"/>
-				<text><![CDATA[JUGADOR_APELLIDOS]]></text>
+				<text><![CDATA[APELLIDOS]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="316" y="0" width="79" height="20" uuid="6489ae05-d9d7-4efe-87f8-0704b2bd2701"/>
-				<text><![CDATA[JUGADOR_FECHANACIMIENTO]]></text>
+				<text><![CDATA[FECHA NAC]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="395" y="0" width="79" height="20" uuid="eda9d5ba-e3d2-4f32-89f5-822c202a01b4"/>
-				<text><![CDATA[JUGADOR_EPS]]></text>
+				<text><![CDATA[EPS]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="474" y="0" width="79" height="20" uuid="b4fdece2-c480-41cf-8592-6ebc91895210"/>
-				<text><![CDATA[JUGADOR_TELEFONO]]></text>
+				<text><![CDATA[TELEFONO]]></text>
 			</staticText>
 		</band>
 	</columnHeader>

@@ -79,6 +79,11 @@ public class GUIPrincipal extends javax.swing.JFrame {
         menuReportes.add(itemReporteEquipo);
 
         itemListadoEquipos.setText("Listado de equipos");
+        itemListadoEquipos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemListadoEquiposActionPerformed(evt);
+            }
+        });
         menuReportes.add(itemListadoEquipos);
 
         itemReporteIntegrantesEquipos.setText("Integrantes de un equipo");
@@ -140,6 +145,12 @@ public class GUIPrincipal extends javax.swing.JFrame {
         GUIEquipo gui = new GUIEquipo();
         gui.setVisible(true);
     }//GEN-LAST:event_itemReporteEquipoActionPerformed
+
+    private void itemListadoEquiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListadoEquiposActionPerformed
+        // TODO add your handling code here:
+        GUIListaEquipos gui = new GUIListaEquipos();
+        gui.setVisible(true);
+    }//GEN-LAST:event_itemListadoEquiposActionPerformed
 
 
 
