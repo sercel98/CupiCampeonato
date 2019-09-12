@@ -1,29 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD JasperReport//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
-
-<jasperReport name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
-    <background>
-        <band/>
-    </background>
-    <title>
-        <band height="79"/>
-    </title>
-    <pageHeader>
-        <band height="35"/>
-    </pageHeader>
-    <columnHeader>
-        <band height="61"/>
-    </columnHeader>
-    <detail>
-        <band height="125"/>
-    </detail>
-    <columnFooter>
-        <band height="45"/>
-    </columnFooter>
-    <pageFooter>
-        <band height="54"/>
-    </pageFooter>
-    <summary>
-        <band height="42"/>
-    </summary>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d31b4e47-4148-4503-83e3-d2fdbc321682">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="DOCUMENTOJUGADOR" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TIPODOCUMENTOJUGADOR" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     JUGADOR."DOCUMENTOJUGADOR" AS JUGADOR_DOCUMENTOJUGADOR,
+     JUGADOR."TIPODOCUMENTOJUGADOR" AS JUGADOR_TIPODOCUMENTOJUGADOR,
+     JUGADOR."NOMBRES" AS JUGADOR_NOMBRES,
+     JUGADOR."APELLIDOS" AS JUGADOR_APELLIDOS,
+     JUGADOR."FECHANACIMIENTO" AS JUGADOR_FECHANACIMIENTO,
+     JUGADOR."EPS" AS JUGADOR_EPS,
+     JUGADOR."TELEFONO" AS JUGADOR_TELEFONO
+FROM
+     "CAMPEONATO"."JUGADOR" JUGADOR
+WHERE JUGADOR."DOCUMENTOJUGADOR" = $P{DOCUMENTOJUGADOR}
+AND JUGADOR."TIPODOCUMENTOJUGADOR" LIKE UPPER($P{TIPODOCUMENTOJUGADOR})]]>
+	</queryString>
+	<field name="JUGADOR_DOCUMENTOJUGADOR" class="java.math.BigDecimal"/>
+	<field name="JUGADOR_TIPODOCUMENTOJUGADOR" class="java.lang.String"/>
+	<field name="JUGADOR_NOMBRES" class="java.lang.String"/>
+	<field name="JUGADOR_APELLIDOS" class="java.lang.String"/>
+	<field name="JUGADOR_FECHANACIMIENTO" class="java.sql.Timestamp"/>
+	<field name="JUGADOR_EPS" class="java.lang.String"/>
+	<field name="JUGADOR_TELEFONO" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="79" height="20" uuid="a0c9e376-9d0d-4bd4-bd58-264827c8b4e5"/>
+				<text><![CDATA[JUGADOR_TIPODOCUMENTOJUGADOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="0" width="79" height="20" uuid="aa8d2f7f-5cfd-4a53-ad4e-e78bd0c2b61e"/>
+				<text><![CDATA[JUGADOR_DOCUMENTOJUGADOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="0" width="79" height="20" uuid="45554d89-3c1c-4a9d-8dde-3e0c265156a0"/>
+				<text><![CDATA[JUGADOR_NOMBRES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="0" width="79" height="20" uuid="fa66ece2-55f3-4cd8-ada9-9c52aa459a76"/>
+				<text><![CDATA[JUGADOR_APELLIDOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="316" y="0" width="79" height="20" uuid="6489ae05-d9d7-4efe-87f8-0704b2bd2701"/>
+				<text><![CDATA[JUGADOR_FECHANACIMIENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="395" y="0" width="79" height="20" uuid="eda9d5ba-e3d2-4f32-89f5-822c202a01b4"/>
+				<text><![CDATA[JUGADOR_EPS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="474" y="0" width="79" height="20" uuid="b4fdece2-c480-41cf-8592-6ebc91895210"/>
+				<text><![CDATA[JUGADOR_TELEFONO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="79" height="20" uuid="a48bb277-032a-42bf-badf-242d97a120c0"/>
+				<textFieldExpression><![CDATA[$F{JUGADOR_TIPODOCUMENTOJUGADOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="0" width="79" height="20" uuid="de2b3cdf-0ee8-41c3-8513-e854482cafa0"/>
+				<textFieldExpression><![CDATA[$F{JUGADOR_DOCUMENTOJUGADOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="0" width="79" height="20" uuid="b3f87650-d1b2-4014-9198-4b5d74b5c12b"/>
+				<textFieldExpression><![CDATA[$F{JUGADOR_NOMBRES}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="0" width="79" height="20" uuid="6f460c1b-00c1-4a55-bd84-f08978e2d21a"/>
+				<textFieldExpression><![CDATA[$F{JUGADOR_APELLIDOS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="316" y="0" width="79" height="20" uuid="f6744882-b5b9-4507-953d-17580898bda7"/>
+				<textFieldExpression><![CDATA[$F{JUGADOR_FECHANACIMIENTO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="0" width="79" height="20" uuid="97ddf558-89fc-4baa-a967-81da9a1c3da4"/>
+				<textFieldExpression><![CDATA[$F{JUGADOR_EPS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="0" width="79" height="20" uuid="3c094ee9-7ee9-4861-8d06-89be209b4480"/>
+				<textFieldExpression><![CDATA[$F{JUGADOR_TELEFONO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
 </jasperReport>
