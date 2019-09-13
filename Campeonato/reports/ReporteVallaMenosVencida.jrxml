@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f8aa6f15-dd7c-4760-b1dd-4f21a9e49412">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT  documentoarquero,tipodocumentoarquero, COUNT(*)
+FROM gol
+GROUP BY documentoarquero,tipodocumentoarquero
+ORDER BY COUNT(*) asc]]>
+	</queryString>
+	<field name="DOCUMENTOARQUERO" class="java.math.BigDecimal"/>
+	<field name="TIPODOCUMENTOARQUERO" class="java.lang.String"/>
+	<field name="COUNT(*)" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="113" splitType="Stretch">
+			<staticText>
+				<reportElement x="130" y="29" width="394" height="40" uuid="8981ba13-fd0c-4f61-9c1f-2b74bf000484"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="26"/>
+				</textElement>
+				<text><![CDATA[Reporte de valla menos vencida]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="161" height="98" uuid="621539ad-1475-47fe-8c3a-f95de59f5f67"/>
+				<imageExpression><![CDATA["C:\\Users\\Sergop\\Documents\\NetBeansProjects\\reportes-campeonato\\Campeonato\\img\\logo_Unibague_300x233.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="42" width="185" height="20" uuid="2c7acd77-b3b4-4da1-b13e-a3d352d4ce55"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DOCUMENTOARQUERO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="42" width="185" height="20" uuid="8c6cfc60-e3a9-4ae6-af04-12c42c6eed0e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPODOCUMENTOARQUERO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="42" width="185" height="20" uuid="46bc3b0a-3fc9-449c-a791-76be30fe3bd6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COUNT(*)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="1" width="552" height="41" uuid="1e8dfca3-139f-4aed-a8a4-f513d870a82a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[La tabla de arqueros con la valla menos vencida es la siguiente: ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="185" height="20" uuid="09e2c7cb-4f56-4c8b-bb1c-08a8a7161f31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DOCUMENTOARQUERO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="0" width="185" height="20" uuid="7cd1b3be-aea9-4acb-a79e-e3f6975c2215"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TIPODOCUMENTOARQUERO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="185" height="20" uuid="cfdc9f1a-d940-4975-acd1-68b83a976dd3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COUNT(*)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

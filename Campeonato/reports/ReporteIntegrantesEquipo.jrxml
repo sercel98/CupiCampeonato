@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4f692402-0d4f-43a1-a1cb-701ca2b6f624">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="edicionCampeonato" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nombreEquipo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     JUGADOR."DOCUMENTOJUGADOR" AS JUGADOR_DOCUMENTOJUGADOR,
+     JUGADOR."TIPODOCUMENTOJUGADOR" AS JUGADOR_TIPODOCUMENTOJUGADOR,
+     JUGADOR."NOMBRES" AS JUGADOR_NOMBRES,
+     JUGADOR."APELLIDOS" AS JUGADOR_APELLIDOS,
+     JUGADOR."FECHANACIMIENTO" AS JUGADOR_FECHANACIMIENTO,
+     JUGADOR."EPS" AS JUGADOR_EPS,
+     JUGADOR."TELEFONO" AS JUGADOR_TELEFONO,
+     EQUIPO."NOMBRE" AS EQUIPO_NOMBRE,
+     JUGADOR_EQUIPO_CAMPEONATO."DORSAL" AS JUGADOR_EQUIPO_CAMPEONATO_DORSAL
+FROM
+     "CAMPEONATO"."JUGADOR" JUGADOR INNER JOIN "CAMPEONATO"."JUGADOR_EQUIPO_CAMPEONATO" JUGADOR_EQUIPO_CAMPEONATO ON JUGADOR."DOCUMENTOJUGADOR" = JUGADOR_EQUIPO_CAMPEONATO."DOCUMENTOJUGADOR"
+     AND JUGADOR."TIPODOCUMENTOJUGADOR" = JUGADOR_EQUIPO_CAMPEONATO."TIPODOCUMENTOJUGADOR"
+     INNER JOIN "CAMPEONATO"."EQUIPOCAMPEONATO" EQUIPOCAMPEONATO ON JUGADOR_EQUIPO_CAMPEONATO."NITUNIVERSIDAD" = EQUIPOCAMPEONATO."NITUNIVERSIDAD"
+     AND EQUIPOCAMPEONATO."EDICIONCAMPEONATO" = JUGADOR_EQUIPO_CAMPEONATO."EDICIONCAMPEONATO"
+     INNER JOIN "CAMPEONATO"."EQUIPO" EQUIPO ON EQUIPOCAMPEONATO."NITUNIVERSIDAD" = EQUIPO."NITUNIVERSIDAD"
+WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONATO."EDICIONCAMPEONATO") = UPPER($P{edicionCampeonato})]]>
+	</queryString>
+	<field name="JUGADOR_DOCUMENTOJUGADOR" class="java.math.BigDecimal"/>
+	<field name="JUGADOR_TIPODOCUMENTOJUGADOR" class="java.lang.String"/>
+	<field name="JUGADOR_NOMBRES" class="java.lang.String"/>
+	<field name="JUGADOR_APELLIDOS" class="java.lang.String"/>
+	<field name="JUGADOR_FECHANACIMIENTO" class="java.sql.Timestamp"/>
+	<field name="JUGADOR_EPS" class="java.lang.String"/>
+	<field name="JUGADOR_TELEFONO" class="java.lang.String"/>
+	<field name="EQUIPO_NOMBRE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="96" splitType="Stretch">
+			<image>
+				<reportElement x="1" y="-2" width="161" height="98" uuid="5769e1ed-e048-4f29-9f26-67433c6afe26"/>
+				<imageExpression><![CDATA["C:\\Users\\Sergop\\Documents\\NetBeansProjects\\reportes-campeonato\\Campeonato\\img\\logo_Unibague_300x233.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="156" y="27" width="394" height="40" uuid="309fb4d3-03ea-4330-bf61-fddfd3dc241d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="26"/>
+				</textElement>
+				<text><![CDATA[Reporte de integrantes de equipo]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="77" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="57" width="64" height="20" backcolor="#D6D6D6" uuid="c34d2269-8177-4857-9a71-6bc8c464b094"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO DOC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="146" y="57" width="72" height="20" backcolor="#D6D6D6" uuid="02576ed8-5a91-4a3d-8a9e-70c5a81edc7b"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="218" y="57" width="61" height="20" backcolor="#D6D6D6" uuid="cba679a1-6934-406f-8825-c24e7a542dc9"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="279" y="57" width="61" height="20" backcolor="#D6D6D6" uuid="74daae38-516d-49b5-a8b0-9ec22b6f97bf"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA NACIMIENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="340" y="57" width="61" height="20" backcolor="#D6D6D6" uuid="e38556c1-551b-4625-b11a-90b92755598f"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EPS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="401" y="57" width="81" height="20" backcolor="#D6D6D6" uuid="407ae716-fa3f-421b-a433-f1382b7ac5fb"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELÉFONO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="482" y="57" width="74" height="20" backcolor="#D6D6D6" uuid="2b134fea-5693-4d26-b4b3-dd74dcf701c3"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EQUIPO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="65" y="57" width="81" height="20" backcolor="#D6D6D6" uuid="99d9e090-2d9e-4af3-9437-9eedf03bdcb0"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DOCUMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="10" width="555" height="42" uuid="2736a4fc-6a75-4571-9ae7-25659219a694"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[El listado de integrantes del equipo buscado es: ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="95" splitType="Stretch">
+			<textField>
+				<reportElement x="64" y="0" width="81" height="34" uuid="690c3076-6f5e-459b-bc8c-e9caf41faa81"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{JUGADOR_DOCUMENTOJUGADOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="64" height="34" uuid="3cfe1e30-12e1-44d9-8ebf-99cbd04c4d94"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{JUGADOR_TIPODOCUMENTOJUGADOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="145" y="0" width="72" height="34" uuid="961e506b-1119-48a2-8f8d-bba554e7700a"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{JUGADOR_NOMBRES}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="217" y="0" width="61" height="34" uuid="baa62929-8344-415d-974b-2458dfe1e2e2"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{JUGADOR_APELLIDOS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="278" y="0" width="61" height="34" uuid="00f7dc9d-1d86-4ab3-a793-d70b73a8fcc3"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{JUGADOR_FECHANACIMIENTO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="339" y="0" width="61" height="34" uuid="1a013c8b-3d9d-4102-ba10-0fe5228546f1"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{JUGADOR_EPS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="81" height="34" uuid="722eb05a-d79c-4799-876a-9e7fda54e8ab"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{JUGADOR_TELEFONO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="481" y="0" width="74" height="34" uuid="e257ee1a-8923-42dd-acb0-205cb3488b83"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EQUIPO_NOMBRE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

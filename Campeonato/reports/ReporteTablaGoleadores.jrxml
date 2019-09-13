@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c1c1aae3-544c-40c6-b838-aa84e4bb92ea">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[ SELECT  documentojugador,tipodocumentojugador, COUNT(*)
+FROM gol
+GROUP BY documentojugador,tipodocumentojugador
+ORDER BY COUNT(*) DESC]]>
+	</queryString>
+	<field name="DOCUMENTOJUGADOR" class="java.math.BigDecimal"/>
+	<field name="TIPODOCUMENTOJUGADOR" class="java.lang.String"/>
+	<field name="COUNT(*)" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="110" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="161" height="98" uuid="cd611874-bd3c-4643-ad75-2fa3ca2b2fe2"/>
+				<imageExpression><![CDATA["C:\\Users\\Sergop\\Documents\\NetBeansProjects\\reportes-campeonato\\Campeonato\\img\\logo_Unibague_300x233.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="133" y="32" width="394" height="40" uuid="1ae95c28-78f1-40b4-b46a-8c14ad84031e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="26"/>
+				</textElement>
+				<text><![CDATA[Reporte de tabla de goleadores]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="69" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="0" width="552" height="41" uuid="4dee6a77-bb41-484a-9fff-3673809f556b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[La información general del equipo con más puntos en el torneo es:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3" y="49" width="185" height="20" backcolor="#D6D6D6" uuid="818562f3-5dfe-40ac-a85e-92c1711fc716"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DOCUMENTOJUGADOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="185" y="49" width="185" height="20" backcolor="#D6D6D6" uuid="6f5e81d1-2b19-4f20-a10a-4a33afe2d311"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPODOCUMENTOJUGADOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="370" y="49" width="185" height="20" backcolor="#D6D6D6" uuid="27cc6fe7-6e96-4a50-8532-395e7766bc1f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GOLES]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="185" height="20" uuid="d619f888-51ba-4586-9865-2151610ae7b4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DOCUMENTOJUGADOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="0" width="185" height="20" uuid="cf8e1b8b-3ff6-4b34-a2a9-13c2a3399ed4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TIPODOCUMENTOJUGADOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="185" height="20" uuid="cfd55d0e-3279-491b-b130-b2c290df54c7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COUNT(*)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

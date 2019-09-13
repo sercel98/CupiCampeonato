@@ -55,6 +55,13 @@ AND JUGADOR."TIPODOCUMENTOJUGADOR" LIKE UPPER($P{TIPODOCUMENTOJUGADOR})]]>
 		<band height="73" splitType="Stretch">
 			<staticText>
 				<reportElement mode="Opaque" x="0" y="53" width="79" height="20" backcolor="#D6D6D6" uuid="a0c9e376-9d0d-4bd4-bd58-264827c8b4e5"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
@@ -62,6 +69,13 @@ AND JUGADOR."TIPODOCUMENTOJUGADOR" LIKE UPPER($P{TIPODOCUMENTOJUGADOR})]]>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="79" y="53" width="79" height="20" backcolor="#D6D6D6" uuid="aa8d2f7f-5cfd-4a53-ad4e-e78bd0c2b61e"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
@@ -69,6 +83,13 @@ AND JUGADOR."TIPODOCUMENTOJUGADOR" LIKE UPPER($P{TIPODOCUMENTOJUGADOR})]]>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="158" y="53" width="79" height="20" backcolor="#D6D6D6" uuid="45554d89-3c1c-4a9d-8dde-3e0c265156a0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
@@ -76,6 +97,13 @@ AND JUGADOR."TIPODOCUMENTOJUGADOR" LIKE UPPER($P{TIPODOCUMENTOJUGADOR})]]>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="237" y="53" width="79" height="20" backcolor="#D6D6D6" uuid="fa66ece2-55f3-4cd8-ada9-9c52aa459a76"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
@@ -83,6 +111,13 @@ AND JUGADOR."TIPODOCUMENTOJUGADOR" LIKE UPPER($P{TIPODOCUMENTOJUGADOR})]]>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="316" y="53" width="79" height="20" backcolor="#D6D6D6" uuid="6489ae05-d9d7-4efe-87f8-0704b2bd2701"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
@@ -90,6 +125,13 @@ AND JUGADOR."TIPODOCUMENTOJUGADOR" LIKE UPPER($P{TIPODOCUMENTOJUGADOR})]]>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="395" y="53" width="79" height="20" backcolor="#D6D6D6" uuid="eda9d5ba-e3d2-4f32-89f5-822c202a01b4"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
@@ -97,6 +139,13 @@ AND JUGADOR."TIPODOCUMENTOJUGADOR" LIKE UPPER($P{TIPODOCUMENTOJUGADOR})]]>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="474" y="53" width="79" height="20" backcolor="#D6D6D6" uuid="b4fdece2-c480-41cf-8592-6ebc91895210"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
@@ -115,30 +164,79 @@ AND JUGADOR."TIPODOCUMENTOJUGADOR" LIKE UPPER($P{TIPODOCUMENTOJUGADOR})]]>
 		<band height="125" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="0" width="79" height="20" uuid="a48bb277-032a-42bf-badf-242d97a120c0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{JUGADOR_TIPODOCUMENTOJUGADOR}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="79" y="0" width="79" height="20" uuid="de2b3cdf-0ee8-41c3-8513-e854482cafa0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{JUGADOR_DOCUMENTOJUGADOR}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="158" y="0" width="79" height="20" uuid="b3f87650-d1b2-4014-9198-4b5d74b5c12b"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{JUGADOR_NOMBRES}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="237" y="0" width="79" height="20" uuid="6f460c1b-00c1-4a55-bd84-f08978e2d21a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{JUGADOR_APELLIDOS}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="316" y="0" width="79" height="20" uuid="f6744882-b5b9-4507-953d-17580898bda7"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{JUGADOR_FECHANACIMIENTO}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="395" y="0" width="79" height="20" uuid="97ddf558-89fc-4baa-a967-81da9a1c3da4"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{JUGADOR_EPS}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="474" y="0" width="79" height="20" uuid="3c094ee9-7ee9-4861-8d06-89be209b4480"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{JUGADOR_TELEFONO}]]></textFieldExpression>
 			</textField>
 		</band>
