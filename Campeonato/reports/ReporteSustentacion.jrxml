@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6df264d5-38fd-4e0a-a792-264473d1aba2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="DOCUMENTOJUGADOR" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FECHAINICIAL" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FECHAFINAL" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+    campeonato.partido.fecha,
+    campeonato.partido.idpartido,
+    campeonato.alineacion.numerofaltas
+FROM
+    campeonato.alineacion
+    INNER JOIN campeonato.partido ON campeonato.partido.idpartido = campeonato.alineacion.idpartido
+    INNER JOIN campeonato.posicion ON campeonato.alineacion.documentojugador = campeonato.posicion.documentojugador
+                                      AND campeonato.alineacion.idtipojugador = campeonato.posicion.idtipojugadorjugador
+    INNER JOIN campeonato.jugador ON campeonato.posicion.documentojugador = campeonato.jugador.documentojugador
+WHERE
+    campeonato.partido.fecha >= to_timestamp($P{FECHAINICIAL}) AND 
+        campeonato.partido.fecha <= to_timestamp($P{FECHAFINAL})
+    AND campeonato.alineacion.documentojugador = $P{DOCUMENTOJUGADOR}]]>
+	</queryString>
+	<field name="FECHA" class="oracle.sql.TIMESTAMP"/>
+	<field name="IDPARTIDO" class="java.math.BigDecimal"/>
+	<field name="NUMEROFALTAS" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="121" y="0" width="308" height="43" uuid="011b1f6c-2682-4a2c-98ff-2b7d80ebc853"/>
+				<textElement>
+					<font fontName="Arial" size="28"/>
+				</textElement>
+				<text><![CDATA[Reporte de sustentación]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="185" height="20" uuid="eca91877-2c0c-4bab-ab0a-3e70819ecd5f"/>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="41" width="185" height="20" uuid="112d0641-0fdd-4a64-8880-8eb0831f5293"/>
+				<text><![CDATA[IDPARTIDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="41" width="185" height="20" uuid="2eae51e4-3de2-4cd5-84c4-26f87cbe2640"/>
+				<text><![CDATA[NUMEROFALTAS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="185" height="20" uuid="cf9a0959-b532-4c53-9360-01b6c1cd7dc4"/>
+				<textFieldExpression><![CDATA[""+$F{FECHA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="0" width="185" height="20" uuid="ec5b4017-090c-4232-b000-eb547a54827e"/>
+				<textFieldExpression><![CDATA[$F{IDPARTIDO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="185" height="20" uuid="f75205ae-334c-4753-96b9-1d724d8a2dd3"/>
+				<textFieldExpression><![CDATA[$F{NUMEROFALTAS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
