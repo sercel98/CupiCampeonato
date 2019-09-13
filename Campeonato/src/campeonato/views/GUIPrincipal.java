@@ -122,6 +122,11 @@ public class GUIPrincipal extends javax.swing.JFrame {
         menuReportes.add(itemEquipoPuntos);
 
         itemPromedioPuntos.setText("J. Promedio de puntos por equipo del torneo.");
+        itemPromedioPuntos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemPromedioPuntosActionPerformed(evt);
+            }
+        });
         menuReportes.add(itemPromedioPuntos);
 
         jMenuBar1.add(menuReportes);
@@ -187,6 +192,13 @@ public class GUIPrincipal extends javax.swing.JFrame {
     private void itemTablaPosicionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTablaPosicionesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_itemTablaPosicionesActionPerformed
+
+    private void itemPromedioPuntosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemPromedioPuntosActionPerformed
+        // TODO add your handling code here:
+        GUIPromedioPuntos gui = new GUIPromedioPuntos();
+        gui.setDefaultCloseOperation(HIDE_ON_CLOSE);
+        gui.setVisible(true);
+    }//GEN-LAST:event_itemPromedioPuntosActionPerformed
 
 
 
