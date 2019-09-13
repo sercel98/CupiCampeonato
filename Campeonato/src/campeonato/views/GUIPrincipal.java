@@ -104,6 +104,11 @@ public class GUIPrincipal extends javax.swing.JFrame {
         menuReportes.add(itemResultadoEncuentro);
 
         itemEquipoPuntos.setText("Equipo con más puntos");
+        itemEquipoPuntos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemEquipoPuntosActionPerformed(evt);
+            }
+        });
         menuReportes.add(itemEquipoPuntos);
 
         itemPromedioPuntos.setText("Promedio de puntos por equipo");
@@ -151,6 +156,13 @@ public class GUIPrincipal extends javax.swing.JFrame {
         GUIListaEquipos gui = new GUIListaEquipos();
         gui.setVisible(true);
     }//GEN-LAST:event_itemListadoEquiposActionPerformed
+
+    private void itemEquipoPuntosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEquipoPuntosActionPerformed
+        // TODO add your handling code here:
+        GUIEquipoMayorPuntaje gui = new GUIEquipoMayorPuntaje();
+        gui.setDefaultCloseOperation(HIDE_ON_CLOSE);
+        gui.setVisible(true);
+    }//GEN-LAST:event_itemEquipoPuntosActionPerformed
 
 
 

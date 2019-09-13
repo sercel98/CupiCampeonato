@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1b3f5c5f-a3cf-4125-9054-9b31288208e5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="EDICIONCAMPEONATO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+    campeonato.equipo.nombre,
+    campeonato.equipo.nituniversidad,
+    campeonato.equipocampeonato.puntaje,
+    campeonato.equipo.abreviatura
+FROM
+    campeonato.equipocampeonato
+    INNER JOIN campeonato.equipo ON campeonato.equipocampeonato.nituniversidad = campeonato.equipo.nituniversidad
+WHERE
+    upper(campeonato.equipocampeonato.edicioncampeonato) = upper($P{EDICIONCAMPEONATO})
+    AND campeonato.equipocampeonato.goles = (
+        SELECT
+            MAX(campeonato.equipocampeonato.goles)
+        FROM
+            campeonato.equipocampeonato
+        WHERE
+            upper(campeonato.equipocampeonato.edicioncampeonato) = upper($P{EDICIONCAMPEONATO})
+    )]]>
+	</queryString>
+	<field name="NOMBRE" class="java.lang.String"/>
+	<field name="NITUNIVERSIDAD" class="java.math.BigDecimal"/>
+	<field name="PUNTAJE" class="java.math.BigDecimal"/>
+	<field name="ABREVIATURA" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="138" height="20" uuid="5e64d058-ba7d-4462-9592-7c76efbc3f3a"/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="0" width="138" height="20" uuid="0f074343-aa85-42d0-86e3-9703bae8b415"/>
+				<text><![CDATA[NITUNIVERSIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="138" height="20" uuid="10a21ffa-d771-4ecb-a73d-4a8566b640e0"/>
+				<text><![CDATA[PUNTAJE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="0" width="138" height="20" uuid="738c8974-82b7-4991-96b0-b69c59ab9c56"/>
+				<text><![CDATA[ABREVIATURA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="138" height="20" uuid="e79ca990-a774-4a59-aa4a-02923fd7ca1e"/>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="0" width="138" height="20" uuid="7c2b05e9-0934-44d8-8213-852f8a537d71"/>
+				<textFieldExpression><![CDATA[$F{NITUNIVERSIDAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="0" width="138" height="20" uuid="b8eed2a8-f74b-4193-9631-094c59fd9706"/>
+				<textFieldExpression><![CDATA[$F{PUNTAJE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="0" width="138" height="20" uuid="26c71f33-0ec9-41eb-aced-f868b8d7c411"/>
+				<textFieldExpression><![CDATA[$F{ABREVIATURA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
