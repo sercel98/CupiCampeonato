@@ -3,7 +3,7 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<parameter name="FECHA" class="java.sql.Timestamp">
+	<parameter name="FECHA" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
@@ -17,7 +17,7 @@
 FROM
     campeonato.partido
 WHERE UPPER(campeonato.partido.edicioncampeonato) = UPPER('2019B')
-and TO_TIMESTAMP(TO_CHAR( campeonato.partido.fecha, 'DD/MM/YYYY hh:mi'),'DD/MM/YYYY hh:mi') = $P{FECHA}]]>
+and TO_TIMESTAMP(TO_CHAR( campeonato.partido.fecha, 'DD/MM/YYYY hh:mi'),'DD/MM/YYYY hh24:mi') = TO_TIMESTAMP($P{FECHA}, 'DD/MM/YYYY hh:mi')]]>
 	</queryString>
 	<field name="IDPARTIDO" class="java.math.BigDecimal"/>
 	<field name="FKLOCAL" class="java.math.BigDecimal"/>

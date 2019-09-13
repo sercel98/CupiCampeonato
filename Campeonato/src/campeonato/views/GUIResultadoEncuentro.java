@@ -142,21 +142,18 @@ public class GUIResultadoEncuentro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteActionPerformed
-        try {
+       
             // TODO add your handling code here:
             Map<String,Object> parametros = new HashMap<>();
-            //parametros.put("FECHA", txtDia.getText() + "/" +txtMes.getText()+"/"+txtAnio.getText()+" " +txtHora.getText()+":"+txtMinuto.getText() );
-            SimpleDateFormat dateFormat = new SimpleDateFormat(
+            parametros.put("FECHA", txtDia.getText() + "/" +txtMes.getText()+"/"+txtAnio.getText()+" " +txtHora.getText()+":"+txtMinuto.getText() );
+            /*SimpleDateFormat dateFormat = new SimpleDateFormat(
                     "dd/MMM/yyyy HH:mm a");
             Date date1=dateFormat.parse("11/09/2019 09:20");
             Timestamp dateTimeStamp=new Timestamp(date1.getTime());
-            System.err.println(dateTimeStamp);
-            parametros.put("FECHA", dateTimeStamp);
+            System.err.println(dateTimeStamp);*/
             System.err.println(parametros);
-            Utils.abrirReporte(null, ".\\reports\\TestPartidoFechas.jasper", "Goleadores");
-        } catch (ParseException ex) {
-            Logger.getLogger(GUIResultadoEncuentro.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            Utils.abrirReporte(parametros, ".\\reports\\TestPartidoFechas.jasper", "Goleadores");
+       
     }//GEN-LAST:event_btnGenerarReporteActionPerformed
 
  
