@@ -29,6 +29,8 @@
                   <Component id="lblNombre" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
                   <Component id="btnGenerarReporte" max="32767" attributes="0"/>
                   <Component id="txtNombreEquipo" alignment="0" max="32767" attributes="0"/>
+                  <Component id="lblNombre1" alignment="1" max="32767" attributes="0"/>
+                  <Component id="txtEdicion" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="98" max="32767" attributes="0"/>
           </Group>
@@ -41,9 +43,13 @@
               <Component id="lblNombre" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="txtNombreEquipo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="lblNombre1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="txtEdicion" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnGenerarReporte" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="64" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -63,6 +69,13 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGenerarReporteActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNombre1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Edicion"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtEdicion">
     </Component>
   </SubComponents>
 </Form>

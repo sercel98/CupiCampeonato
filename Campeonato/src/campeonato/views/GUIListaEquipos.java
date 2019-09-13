@@ -20,6 +20,7 @@ public class GUIListaEquipos extends javax.swing.JFrame {
      */
     public GUIListaEquipos() {
         initComponents();
+        txtEdicion.setText("2019B");
     }
 
     /**

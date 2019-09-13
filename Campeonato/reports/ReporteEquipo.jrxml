@@ -25,47 +25,87 @@ WHERE
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
-	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band height="61" splitType="Stretch">
+		<band height="107" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="138" height="20" uuid="d6b5959e-7087-4cdf-90ad-931425a4b388"/>
+				<reportElement x="153" y="25" width="251" height="40" uuid="2d6a36f6-fb81-4847-ad76-ce96f20043ae"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="26"/>
+				</textElement>
+				<text><![CDATA[Reporte de Equipo]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="153" height="94" uuid="773399b4-31a2-4a03-93e0-e2d826b632ac"/>
+				<imageExpression><![CDATA["C:\\Users\\Sergop\\Documents\\NetBeansProjects\\reportes-campeonato\\Campeonato\\img\\logo_Unibague_300x233.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="43" y="42" width="110" height="20" forecolor="#000000" backcolor="#D6D6D6" uuid="d6b5959e-7087-4cdf-90ad-931425a4b388"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[NIT]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="138" y="0" width="138" height="20" uuid="35d8cbae-a5f6-42ee-bea1-b2f903b46f4a"/>
+				<reportElement mode="Opaque" x="153" y="42" width="138" height="20" forecolor="#000000" backcolor="#D6D6D6" uuid="35d8cbae-a5f6-42ee-bea1-b2f903b46f4a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[NOMBRE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="276" y="0" width="138" height="20" uuid="1cdf5163-e2e9-43fd-85cf-da47b13682d7"/>
+				<reportElement mode="Opaque" x="291" y="42" width="98" height="20" forecolor="#000000" backcolor="#D6D6D6" uuid="1cdf5163-e2e9-43fd-85cf-da47b13682d7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[ABREVIATURA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="414" y="0" width="138" height="20" uuid="fd8c96bf-2b17-4bc5-8650-78eca48371ef"/>
+				<reportElement mode="Opaque" x="389" y="42" width="119" height="20" forecolor="#000000" backcolor="#D6D6D6" uuid="fd8c96bf-2b17-4bc5-8650-78eca48371ef"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[FECHA FUNDACION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="42" uuid="7cb666fe-8364-4b43-b540-510975152f63"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[La información general del equipo buscado es: ]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="125" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="138" height="20" uuid="d1384633-4be5-4a28-837d-d7aa8eb7e6b2"/>
+				<reportElement x="43" y="1" width="110" height="40" forecolor="#000000" uuid="d1384633-4be5-4a28-837d-d7aa8eb7e6b2"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{EQUIPO_NITUNIVERSIDAD}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="138" y="0" width="138" height="20" uuid="a2cca758-5a39-42ef-b363-9bf63ec20fee"/>
+				<reportElement x="153" y="1" width="138" height="40" forecolor="#000000" uuid="a2cca758-5a39-42ef-b363-9bf63ec20fee"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{EQUIPO_NOMBRE}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="276" y="0" width="138" height="20" uuid="eba631c6-7723-4493-9944-2500a8f1529e"/>
+				<reportElement x="291" y="2" width="98" height="39" forecolor="#000000" uuid="eba631c6-7723-4493-9944-2500a8f1529e"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{EQUIPO_ABREVIATURA}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="414" y="0" width="138" height="20" uuid="5d50f6f9-ce8a-41b6-921a-bd22def59fe9"/>
+				<reportElement x="389" y="2" width="119" height="39" forecolor="#000000" uuid="5d50f6f9-ce8a-41b6-921a-bd22def59fe9"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{EQUIPO_FECHAFUNDACION}]]></textFieldExpression>
 			</textField>
 		</band>

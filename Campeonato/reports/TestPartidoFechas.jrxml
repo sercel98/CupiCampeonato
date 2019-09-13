@@ -19,7 +19,7 @@
     TO_CHAR( campeonato.partido.fecha, 'DD/MM/YYYY hh24:mi') AS FECHA
 FROM
     campeonato.partido
-WHERE UPPER(campeonato.partido.edicioncampeonato) = UPPER($P{EDICIONCAMPEONATO}) and TO_CHAR( campeonato.partido.fecha, 'DD/MM/YYYY hh24:mi') = '11/09/2019 22:36']]>
+WHERE UPPER(campeonato.partido.edicioncampeonato) = UPPER($P{EDICIONCAMPEONATO}) and TO_CHAR( campeonato.partido.fecha, 'DD/MM/YYYY hh24:mi') = $P{FECHA}]]>
 	</queryString>
 	<field name="IDPARTIDO" class="java.math.BigDecimal"/>
 	<field name="FKLOCAL" class="java.math.BigDecimal"/>

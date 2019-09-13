@@ -62,7 +62,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
 
         menuReportes.setText("Reportes");
 
-        itemReporteJugador.setText("Jugador");
+        itemReporteJugador.setText("A. Información de un jugador");
         itemReporteJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 itemReporteJugadorActionPerformed(evt);
@@ -70,7 +70,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
         });
         menuReportes.add(itemReporteJugador);
 
-        itemReporteEquipo.setText("Equipo");
+        itemReporteEquipo.setText("B. Información de un equipo");
         itemReporteEquipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 itemReporteEquipoActionPerformed(evt);
@@ -78,7 +78,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
         });
         menuReportes.add(itemReporteEquipo);
 
-        itemListadoEquipos.setText("Listado de equipos");
+        itemListadoEquipos.setText("C. Lista de equipos participantes");
         itemListadoEquipos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 itemListadoEquiposActionPerformed(evt);
@@ -86,24 +86,34 @@ public class GUIPrincipal extends javax.swing.JFrame {
         });
         menuReportes.add(itemListadoEquipos);
 
-        itemReporteIntegrantesEquipos.setText("Integrantes de un equipo");
+        itemReporteIntegrantesEquipos.setText("D. Integrantes de cada equipo");
+        itemReporteIntegrantesEquipos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemReporteIntegrantesEquiposActionPerformed(evt);
+            }
+        });
         menuReportes.add(itemReporteIntegrantesEquipos);
         menuReportes.add(jSeparator1);
 
-        itemTablaPosiciones.setText("Tabla general de posiciones");
+        itemTablaPosiciones.setText("E. Tabla general de posiciones");
+        itemTablaPosiciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemTablaPosicionesActionPerformed(evt);
+            }
+        });
         menuReportes.add(itemTablaPosiciones);
 
-        itemTablaGoleadores.setText("Tabla de goleadores");
+        itemTablaGoleadores.setText("F. Tabla de goleadores");
         menuReportes.add(itemTablaGoleadores);
 
-        itemTablaMenosVencida.setText("Tabla de valla menos vencida");
+        itemTablaMenosVencida.setText("G. Tabla de valla menos vencida");
         menuReportes.add(itemTablaMenosVencida);
         menuReportes.add(jSeparator2);
 
-        itemResultadoEncuentro.setText("Resultado de un encuentro");
+        itemResultadoEncuentro.setText("H. Resultado específico de un encuentro");
         menuReportes.add(itemResultadoEncuentro);
 
-        itemEquipoPuntos.setText("Equipo con más puntos");
+        itemEquipoPuntos.setText("I. Cuál es el equipo con mayor cantidad de puntos");
         itemEquipoPuntos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 itemEquipoPuntosActionPerformed(evt);
@@ -111,7 +121,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
         });
         menuReportes.add(itemEquipoPuntos);
 
-        itemPromedioPuntos.setText("Promedio de puntos por equipo");
+        itemPromedioPuntos.setText("J. Promedio de puntos por equipo del torneo.");
         menuReportes.add(itemPromedioPuntos);
 
         jMenuBar1.add(menuReportes);
@@ -125,7 +135,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 499, Short.MAX_VALUE)
+            .addGap(0, 555, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,18 +152,21 @@ public class GUIPrincipal extends javax.swing.JFrame {
     private void itemReporteJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemReporteJugadorActionPerformed
         // TODO add your handling code here:
         GUIReporteJugador gui = new GUIReporteJugador();
+        gui.setDefaultCloseOperation(HIDE_ON_CLOSE);
         gui.setVisible(true);
     }//GEN-LAST:event_itemReporteJugadorActionPerformed
 
     private void itemReporteEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemReporteEquipoActionPerformed
         // TODO add your handling code here:
         GUIEquipo gui = new GUIEquipo();
+        gui.setDefaultCloseOperation(HIDE_ON_CLOSE);
         gui.setVisible(true);
     }//GEN-LAST:event_itemReporteEquipoActionPerformed
 
     private void itemListadoEquiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListadoEquiposActionPerformed
         // TODO add your handling code here:
         GUIListaEquipos gui = new GUIListaEquipos();
+        gui.setDefaultCloseOperation(HIDE_ON_CLOSE);
         gui.setVisible(true);
     }//GEN-LAST:event_itemListadoEquiposActionPerformed
 
@@ -163,6 +176,18 @@ public class GUIPrincipal extends javax.swing.JFrame {
         gui.setDefaultCloseOperation(HIDE_ON_CLOSE);
         gui.setVisible(true);
     }//GEN-LAST:event_itemEquipoPuntosActionPerformed
+
+    private void itemReporteIntegrantesEquiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemReporteIntegrantesEquiposActionPerformed
+        // TODO add your handling code here:
+        GUIIntegrantesEquipo gui = new GUIIntegrantesEquipo();
+        gui.setDefaultCloseOperation(HIDE_ON_CLOSE);
+        gui.setVisible(true);
+    }//GEN-LAST:event_itemReporteIntegrantesEquiposActionPerformed
+
+    private void itemTablaPosicionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTablaPosicionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemTablaPosicionesActionPerformed
+
 
 
 

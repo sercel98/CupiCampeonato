@@ -5,6 +5,10 @@
  */
 package campeonato.views;
 
+import campeonato.utils.Utils;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author Sergop
@@ -16,6 +20,7 @@ public class GUIIntegrantesEquipo extends javax.swing.JFrame {
      */
     public GUIIntegrantesEquipo() {
         initComponents();
+        txtEdicion.setText("2019B");
     }
 
     /**
@@ -30,6 +35,8 @@ public class GUIIntegrantesEquipo extends javax.swing.JFrame {
         lblNombre = new javax.swing.JLabel();
         txtNombreEquipo = new javax.swing.JTextField();
         btnGenerarReporte = new javax.swing.JButton();
+        lblNombre1 = new javax.swing.JLabel();
+        txtEdicion = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,6 +49,8 @@ public class GUIIntegrantesEquipo extends javax.swing.JFrame {
             }
         });
 
+        lblNombre1.setText("Edicion");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -51,7 +60,9 @@ public class GUIIntegrantesEquipo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGenerarReporte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtNombreEquipo))
+                    .addComponent(txtNombreEquipo)
+                    .addComponent(lblNombre1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtEdicion, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(98, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -61,9 +72,13 @@ public class GUIIntegrantesEquipo extends javax.swing.JFrame {
                 .addComponent(lblNombre)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNombreEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNombre1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtEdicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnGenerarReporte)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -71,6 +86,10 @@ public class GUIIntegrantesEquipo extends javax.swing.JFrame {
 
     private void btnGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteActionPerformed
         // TODO add your handling code here:
+        Map<String,Object> parametros = new HashMap();
+        parametros.put("edicionCampeonato",txtEdicion.getText());
+        parametros.put("nombreEquipo", txtNombreEquipo.getText());
+        Utils.abrirReporte(parametros, ".\\reports\\ReporteIntegrantesEquipo.jasper", "Integrantes equipo " + txtNombreEquipo.getText());
     }//GEN-LAST:event_btnGenerarReporteActionPerformed
 
    
@@ -78,6 +97,8 @@ public class GUIIntegrantesEquipo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGenerarReporte;
     private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblNombre1;
+    private javax.swing.JTextField txtEdicion;
     private javax.swing.JTextField txtNombreEquipo;
     // End of variables declaration//GEN-END:variables
 }

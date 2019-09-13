@@ -29,7 +29,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="itemReporteJugador">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Jugador"/>
+                <Property name="text" type="java.lang.String" value="A. Informaci&#xf3;n de un jugador"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itemReporteJugadorActionPerformed"/>
@@ -37,7 +37,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itemReporteEquipo">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Equipo"/>
+                <Property name="text" type="java.lang.String" value="B. Informaci&#xf3;n de un equipo"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itemReporteEquipoActionPerformed"/>
@@ -45,7 +45,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itemListadoEquipos">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Listado de equipos"/>
+                <Property name="text" type="java.lang.String" value="C. Lista de equipos participantes"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itemListadoEquiposActionPerformed"/>
@@ -53,36 +53,42 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itemReporteIntegrantesEquipos">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Integrantes de un equipo"/>
+                <Property name="text" type="java.lang.String" value="D. Integrantes de cada equipo"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itemReporteIntegrantesEquiposActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itemTablaPosiciones">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Tabla general de posiciones"/>
+                <Property name="text" type="java.lang.String" value="E. Tabla general de posiciones"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itemTablaPosicionesActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itemTablaGoleadores">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Tabla de goleadores"/>
+                <Property name="text" type="java.lang.String" value="F. Tabla de goleadores"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itemTablaMenosVencida">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Tabla de valla menos vencida"/>
+                <Property name="text" type="java.lang.String" value="G. Tabla de valla menos vencida"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator2">
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itemResultadoEncuentro">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Resultado de un encuentro"/>
+                <Property name="text" type="java.lang.String" value="H. Resultado espec&#xed;fico de un encuentro"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itemEquipoPuntos">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Equipo con m&#xe1;s puntos"/>
+                <Property name="text" type="java.lang.String" value="I. Cu&#xe1;l es el equipo con mayor cantidad de puntos"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itemEquipoPuntosActionPerformed"/>
@@ -90,7 +96,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itemPromedioPuntos">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Promedio de puntos por equipo"/>
+                <Property name="text" type="java.lang.String" value="J. Promedio de puntos por equipo del torneo."/>
               </Properties>
             </MenuItem>
           </SubComponents>
@@ -126,7 +132,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="499" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="555" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
