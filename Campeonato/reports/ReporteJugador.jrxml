@@ -34,40 +34,80 @@ AND JUGADOR."TIPODOCUMENTOJUGADOR" LIKE UPPER($P{TIPODOCUMENTOJUGADOR})]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
-	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band height="61" splitType="Stretch">
+		<band height="109" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="161" height="98" uuid="7f9c6f10-f7c9-43d2-9fdb-5fc638e7e998"/>
+				<imageExpression><![CDATA["C:\\Users\\Sergop\\Documents\\NetBeansProjects\\reportes-campeonato\\Campeonato\\img\\logo_Unibague_300x233.jpg"]]></imageExpression>
+			</image>
 			<staticText>
-				<reportElement x="0" y="0" width="79" height="20" uuid="a0c9e376-9d0d-4bd4-bd58-264827c8b4e5"/>
+				<reportElement x="161" y="38" width="302" height="40" uuid="848569f6-ba48-4cc3-bd5a-5e4061d8ae0b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="26"/>
+				</textElement>
+				<text><![CDATA[Reporte de Jugador]]></text>
+			</staticText>
+			<frame>
+				<reportElement mode="Opaque" x="395" y="78" width="100" height="20" backcolor="#FFFFFF" uuid="39d3cf6d-5e87-4206-8b09-7f18f4fd8610"/>
+			</frame>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="53" width="79" height="20" backcolor="#D6D6D6" uuid="a0c9e376-9d0d-4bd4-bd58-264827c8b4e5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[TIPO DOC]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="79" y="0" width="79" height="20" uuid="aa8d2f7f-5cfd-4a53-ad4e-e78bd0c2b61e"/>
+				<reportElement mode="Opaque" x="79" y="53" width="79" height="20" backcolor="#D6D6D6" uuid="aa8d2f7f-5cfd-4a53-ad4e-e78bd0c2b61e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[DOCUMENTO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="158" y="0" width="79" height="20" uuid="45554d89-3c1c-4a9d-8dde-3e0c265156a0"/>
+				<reportElement mode="Opaque" x="158" y="53" width="79" height="20" backcolor="#D6D6D6" uuid="45554d89-3c1c-4a9d-8dde-3e0c265156a0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[NOMBRE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="237" y="0" width="79" height="20" uuid="fa66ece2-55f3-4cd8-ada9-9c52aa459a76"/>
+				<reportElement mode="Opaque" x="237" y="53" width="79" height="20" backcolor="#D6D6D6" uuid="fa66ece2-55f3-4cd8-ada9-9c52aa459a76"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[APELLIDOS]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="316" y="0" width="79" height="20" uuid="6489ae05-d9d7-4efe-87f8-0704b2bd2701"/>
+				<reportElement mode="Opaque" x="316" y="53" width="79" height="20" backcolor="#D6D6D6" uuid="6489ae05-d9d7-4efe-87f8-0704b2bd2701"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[FECHA NAC]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="395" y="0" width="79" height="20" uuid="eda9d5ba-e3d2-4f32-89f5-822c202a01b4"/>
+				<reportElement mode="Opaque" x="395" y="53" width="79" height="20" backcolor="#D6D6D6" uuid="eda9d5ba-e3d2-4f32-89f5-822c202a01b4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[EPS]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="474" y="0" width="79" height="20" uuid="b4fdece2-c480-41cf-8592-6ebc91895210"/>
+				<reportElement mode="Opaque" x="474" y="53" width="79" height="20" backcolor="#D6D6D6" uuid="b4fdece2-c480-41cf-8592-6ebc91895210"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[TELEFONO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="528" height="41" uuid="3838c117-207b-465e-acef-b43fcb8e1896"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[La información general del jugador consultado es: ]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -103,13 +143,4 @@ AND JUGADOR."TIPODOCUMENTOJUGADOR" LIKE UPPER($P{TIPODOCUMENTOJUGADOR})]]>
 			</textField>
 		</band>
 	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band height="54" splitType="Stretch"/>
-	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch"/>
-	</summary>
 </jasperReport>
