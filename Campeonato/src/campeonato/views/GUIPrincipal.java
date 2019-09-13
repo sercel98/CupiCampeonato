@@ -5,6 +5,8 @@
  */
 package campeonato.views;
 
+import campeonato.utils.Utils;
+
 /**
  *
  * @author Sergop
@@ -104,13 +106,28 @@ public class GUIPrincipal extends javax.swing.JFrame {
         menuReportes.add(itemTablaPosiciones);
 
         itemTablaGoleadores.setText("F. Tabla de goleadores");
+        itemTablaGoleadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemTablaGoleadoresActionPerformed(evt);
+            }
+        });
         menuReportes.add(itemTablaGoleadores);
 
         itemTablaMenosVencida.setText("G. Tabla de valla menos vencida");
+        itemTablaMenosVencida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemTablaMenosVencidaActionPerformed(evt);
+            }
+        });
         menuReportes.add(itemTablaMenosVencida);
         menuReportes.add(jSeparator2);
 
         itemResultadoEncuentro.setText("H. Resultado específico de un encuentro");
+        itemResultadoEncuentro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemResultadoEncuentroActionPerformed(evt);
+            }
+        });
         menuReportes.add(itemResultadoEncuentro);
 
         itemEquipoPuntos.setText("I. Cuál es el equipo con mayor cantidad de puntos");
@@ -191,6 +208,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
 
     private void itemTablaPosicionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTablaPosicionesActionPerformed
         // TODO add your handling code here:
+        Utils.abrirReporte(null, ".\\reports\\ReporteTablaPosiciones.jasper", "Goleadores");
     }//GEN-LAST:event_itemTablaPosicionesActionPerformed
 
     private void itemPromedioPuntosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemPromedioPuntosActionPerformed
@@ -199,6 +217,23 @@ public class GUIPrincipal extends javax.swing.JFrame {
         gui.setDefaultCloseOperation(HIDE_ON_CLOSE);
         gui.setVisible(true);
     }//GEN-LAST:event_itemPromedioPuntosActionPerformed
+
+    private void itemTablaGoleadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTablaGoleadoresActionPerformed
+        // TODO add your handling code here:
+        Utils.abrirReporte(null, ".\\reports\\ReporteTablaGoleadores.jasper", "Goleadores");
+    }//GEN-LAST:event_itemTablaGoleadoresActionPerformed
+
+    private void itemTablaMenosVencidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTablaMenosVencidaActionPerformed
+        // TODO add your handling code here:
+        Utils.abrirReporte(null, ".\\reports\\ReporteVallaMenosVencida.jasper", "Goleadores");
+    }//GEN-LAST:event_itemTablaMenosVencidaActionPerformed
+
+    private void itemResultadoEncuentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemResultadoEncuentroActionPerformed
+        // TODO add your handling code here:
+        GUIResultadoEncuentro gui = new GUIResultadoEncuentro();
+        gui.setDefaultCloseOperation(HIDE_ON_CLOSE);
+        gui.setVisible(true);
+    }//GEN-LAST:event_itemResultadoEncuentroActionPerformed
 
 
 

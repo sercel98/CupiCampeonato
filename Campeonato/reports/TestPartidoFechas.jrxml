@@ -3,10 +3,7 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<parameter name="EDICIONCAMPEONATO" class="java.lang.String">
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
-	</parameter>
-	<parameter name="FECHA" class="java.lang.String">
+	<parameter name="FECHA" class="java.sql.Timestamp">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
@@ -16,10 +13,11 @@
     campeonato.partido.fkvisitante,
     campeonato.partido.goleslocal,
     campeonato.partido.golesvisitante,
-    TO_CHAR( campeonato.partido.fecha, 'DD/MM/YYYY hh24:mi') as fecha
+    TO_CHAR( campeonato.partido.fecha, 'DD/MM/YYYY hh:mi') as fecha
 FROM
     campeonato.partido
-WHERE UPPER(campeonato.partido.edicioncampeonato) = UPPER($P{EDICIONCAMPEONATO}) and TO_CHAR( campeonato.partido.fecha, 'DD/MM/YYYY hh24:mi') = $P{FECHA}]]>
+WHERE UPPER(campeonato.partido.edicioncampeonato) = UPPER('2019B')
+and TO_TIMESTAMP(TO_CHAR( campeonato.partido.fecha, 'DD/MM/YYYY hh:mi'),'DD/MM/YYYY hh:mi') = $P{FECHA}]]>
 	</queryString>
 	<field name="IDPARTIDO" class="java.math.BigDecimal"/>
 	<field name="FKLOCAL" class="java.math.BigDecimal"/>
@@ -32,10 +30,6 @@ WHERE UPPER(campeonato.partido.edicioncampeonato) = UPPER($P{EDICIONCAMPEONATO})
 	</background>
 	<title>
 		<band height="107" splitType="Stretch">
-			<image>
-				<reportElement x="0" y="0" width="161" height="98" uuid="91024501-d6b4-42c1-94aa-b9bdaf025ffa"/>
-				<imageExpression><![CDATA["C:\\Users\\Sergop\\Documents\\NetBeansProjects\\reportes-campeonato\\Campeonato\\img\\logo_Unibague_300x233.jpg"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="113" y="25" width="333" height="40" uuid="91b322c7-98f7-4f74-bc8f-85cf436ed613"/>
 				<textElement textAlignment="Center">
@@ -136,7 +130,7 @@ WHERE UPPER(campeonato.partido.edicioncampeonato) = UPPER($P{EDICIONCAMPEONATO})
 				<textFieldExpression><![CDATA[$F{GOLESVISITANTE}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="460" y="0" width="92" height="20" uuid="07f226f4-d19c-4c18-84d9-e4ea91d7aabd"/>
+				<reportElement x="460" y="0" width="109" height="20" uuid="07f226f4-d19c-4c18-84d9-e4ea91d7aabd"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="12"/>
 				</textElement>

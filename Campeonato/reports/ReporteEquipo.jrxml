@@ -33,10 +33,6 @@ WHERE
 				</textElement>
 				<text><![CDATA[Reporte de Equipo]]></text>
 			</staticText>
-			<image>
-				<reportElement x="0" y="0" width="153" height="94" uuid="773399b4-31a2-4a03-93e0-e2d826b632ac"/>
-				<imageExpression><![CDATA["C:\\Users\\Sergop\\Documents\\NetBeansProjects\\reportes-campeonato\\Campeonato\\img\\logo_Unibague_300x233.jpg"]]></imageExpression>
-			</image>
 		</band>
 	</title>
 	<columnHeader>

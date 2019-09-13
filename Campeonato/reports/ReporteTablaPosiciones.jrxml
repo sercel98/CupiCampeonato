@@ -17,7 +17,7 @@
 FROM
      "CAMPEONATO"."EQUIPO" EQUIPO INNER JOIN "CAMPEONATO"."EQUIPOCAMPEONATO" EQUIPOCAMPEONATO ON EQUIPO."NITUNIVERSIDAD" = EQUIPOCAMPEONATO."NITUNIVERSIDAD"
 WHERE
-     UPPER($P{edicionCampeonato}) = UPPER(EQUIPOCAMPEONATO."EDICIONCAMPEONATO")
+     UPPER('2019B') = UPPER(EQUIPOCAMPEONATO."EDICIONCAMPEONATO")
 ORDER BY
      EQUIPOCAMPEONATO."PUNTAJE" DESC]]>
 	</queryString>
@@ -32,10 +32,6 @@ ORDER BY
 	</background>
 	<title>
 		<band height="100" splitType="Stretch">
-			<image>
-				<reportElement x="0" y="0" width="161" height="98" uuid="8cca8c40-acec-4b06-9c1b-9c475ffb9b69"/>
-				<imageExpression><![CDATA["C:\\Users\\Sergop\\Documents\\NetBeansProjects\\reportes-campeonato\\Campeonato\\img\\logo_Unibague_300x233.jpg"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="138" y="32" width="302" height="40" uuid="600cae3e-f4c5-4392-9bd8-4f91bda7f229"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">

@@ -73,11 +73,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="F. Tabla de goleadores"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itemTablaGoleadoresActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itemTablaMenosVencida">
               <Properties>
                 <Property name="text" type="java.lang.String" value="G. Tabla de valla menos vencida"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itemTablaMenosVencidaActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator2">
             </MenuItem>
@@ -85,6 +91,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="H. Resultado espec&#xed;fico de un encuentro"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itemResultadoEncuentroActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itemEquipoPuntos">
               <Properties>

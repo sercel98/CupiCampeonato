@@ -4,14 +4,38 @@
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<queryString>
-		<![CDATA[SELECT  documentoarquero,tipodocumentoarquero, COUNT(*)
-FROM gol
-GROUP BY documentoarquero,tipodocumentoarquero
-ORDER BY COUNT(*) asc]]>
+		<![CDATA[SELECT
+    campeonato.jugador.nombres,
+    campeonato.jugador.apellidos,
+    campeonato.equipo.nombre,
+    campeonato.equipo.fechafundacion,
+    COUNT(*) AS GOLES
+FROM
+    campeonato.gol
+    INNER JOIN campeonato.jugador_equipo_campeonato ON campeonato.jugador_equipo_campeonato.documentojugador = campeonato.gol.documentoarquero
+                                                       AND campeonato.jugador_equipo_campeonato.tipodocumentojugador = campeonato
+                                                       .gol.tipodocumentoarquero
+                                                       AND campeonato.jugador_equipo_campeonato.nituniversidad = campeonato.gol.nituniversidadarquero
+                                                       AND campeonato.jugador_equipo_campeonato.edicioncampeonato = campeonato.gol
+                                                       .edicioncampeonatoarquero
+    INNER JOIN campeonato.equipocampeonato ON campeonato.equipocampeonato.nituniversidad = campeonato.jugador_equipo_campeonato.nituniversidad
+                                              AND campeonato.equipocampeonato.edicioncampeonato = campeonato.jugador_equipo_campeonato
+                                              .edicioncampeonato
+    INNER JOIN campeonato.equipo ON campeonato.equipo.nituniversidad = campeonato.equipocampeonato.nituniversidad
+    INNER JOIN campeonato.jugador ON campeonato.jugador_equipo_campeonato.documentojugador = campeonato.jugador.documentojugador
+                                     AND campeonato.jugador_equipo_campeonato.tipodocumentojugador = campeonato.jugador.tipodocumentojugador
+WHERE campeonato.gol.edicioncampeonatojugador = '2019B'
+GROUP BY campeonato.jugador.nombres,
+    campeonato.jugador.apellidos,
+    campeonato.equipo.nombre,
+    campeonato.equipo.fechafundacion
+ORDER BY GOLES]]>
 	</queryString>
-	<field name="DOCUMENTOARQUERO" class="java.math.BigDecimal"/>
-	<field name="TIPODOCUMENTOARQUERO" class="java.lang.String"/>
-	<field name="COUNT(*)" class="java.math.BigDecimal"/>
+	<field name="NOMBRES" class="java.lang.String"/>
+	<field name="APELLIDOS" class="java.lang.String"/>
+	<field name="NOMBRE" class="java.lang.String"/>
+	<field name="FECHAFUNDACION" class="java.sql.Timestamp"/>
+	<field name="GOLES" class="java.math.BigDecimal"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -24,66 +48,53 @@ ORDER BY COUNT(*) asc]]>
 				</textElement>
 				<text><![CDATA[Reporte de valla menos vencida]]></text>
 			</staticText>
-			<image>
-				<reportElement x="0" y="0" width="161" height="98" uuid="621539ad-1475-47fe-8c3a-f95de59f5f67"/>
-				<imageExpression><![CDATA["C:\\Users\\Sergop\\Documents\\NetBeansProjects\\reportes-campeonato\\Campeonato\\img\\logo_Unibague_300x233.jpg"]]></imageExpression>
-			</image>
 		</band>
 	</title>
 	<columnHeader>
 		<band height="63" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="42" width="185" height="20" uuid="2c7acd77-b3b4-4da1-b13e-a3d352d4ce55"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[DOCUMENTOARQUERO]]></text>
+				<reportElement x="0" y="0" width="111" height="20" uuid="b6c78d8b-08c4-430d-8167-ed0ce2b21c8d"/>
+				<text><![CDATA[NOMBRES]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="185" y="42" width="185" height="20" uuid="8c6cfc60-e3a9-4ae6-af04-12c42c6eed0e"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[TIPODOCUMENTOARQUERO]]></text>
+				<reportElement x="111" y="0" width="111" height="20" uuid="c63bfb35-739f-4246-9d46-3541960075fd"/>
+				<text><![CDATA[APELLIDOS]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="370" y="42" width="185" height="20" uuid="46bc3b0a-3fc9-449c-a791-76be30fe3bd6"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[COUNT(*)]]></text>
+				<reportElement x="222" y="0" width="111" height="20" uuid="df3955f4-7f95-474d-8c52-d4b78a8d3d38"/>
+				<text><![CDATA[NOMBRE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="3" y="1" width="552" height="41" uuid="1e8dfca3-139f-4aed-a8a4-f513d870a82a"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="18"/>
-				</textElement>
-				<text><![CDATA[La tabla de arqueros con la valla menos vencida es la siguiente: ]]></text>
+				<reportElement x="333" y="0" width="111" height="20" uuid="498ee746-26fc-4b98-b557-f5e204cfe566"/>
+				<text><![CDATA[FECHAFUNDACION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="0" width="111" height="20" uuid="fa7a128e-2b91-48b5-94c5-24a5e28e7ff5"/>
+				<text><![CDATA[GOLES]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="125" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="185" height="20" uuid="09e2c7cb-4f56-4c8b-bb1c-08a8a7161f31"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{DOCUMENTOARQUERO}]]></textFieldExpression>
+				<reportElement x="0" y="0" width="111" height="20" uuid="7fce4b38-0280-40df-b165-2da1ab7622ef"/>
+				<textFieldExpression><![CDATA[$F{NOMBRES}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="185" y="0" width="185" height="20" uuid="7cd1b3be-aea9-4acb-a79e-e3f6975c2215"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{TIPODOCUMENTOARQUERO}]]></textFieldExpression>
+				<reportElement x="111" y="0" width="111" height="20" uuid="9a3329d8-4e0b-416f-b306-4c8e779bb75a"/>
+				<textFieldExpression><![CDATA[$F{APELLIDOS}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="370" y="0" width="185" height="20" uuid="cfdc9f1a-d940-4975-acd1-68b83a976dd3"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{COUNT(*)}]]></textFieldExpression>
+				<reportElement x="222" y="0" width="111" height="20" uuid="6190099a-dbe3-43e6-b5d1-83670bfd856e"/>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="111" height="20" uuid="50efc4a7-cc7f-4ffa-8b36-e5d750835149"/>
+				<textFieldExpression><![CDATA[$F{FECHAFUNDACION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="111" height="20" uuid="eea0a322-008f-4477-b7fb-b987efc133a8"/>
+				<textFieldExpression><![CDATA[$F{GOLES}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

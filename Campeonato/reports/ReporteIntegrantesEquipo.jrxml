@@ -41,10 +41,6 @@ WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONAT
 	</background>
 	<title>
 		<band height="96" splitType="Stretch">
-			<image>
-				<reportElement x="1" y="-2" width="161" height="98" uuid="5769e1ed-e048-4f29-9f26-67433c6afe26"/>
-				<imageExpression><![CDATA["C:\\Users\\Sergop\\Documents\\NetBeansProjects\\reportes-campeonato\\Campeonato\\img\\logo_Unibague_300x233.jpg"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="156" y="27" width="394" height="40" uuid="309fb4d3-03ea-4330-bf61-fddfd3dc241d"/>
 				<textElement textAlignment="Center">

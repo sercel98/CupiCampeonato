@@ -27,7 +27,7 @@ WHERE
 	<columnHeader>
 		<band height="61" splitType="Stretch">
 			<staticText>
-				<reportElement x="308" y="2" width="100" height="20" uuid="21c96c00-2e04-4c60-94de-749c7c112d36"/>
+				<reportElement x="219" y="0" width="100" height="20" uuid="21c96c00-2e04-4c60-94de-749c7c112d36"/>
 				<text><![CDATA[PROMEDIO]]></text>
 			</staticText>
 		</band>
@@ -35,7 +35,7 @@ WHERE
 	<detail>
 		<band height="125" splitType="Stretch">
 			<textField>
-				<reportElement x="308" y="52" width="100" height="20" uuid="8c4dda20-d21d-4e05-9bf9-074f50b3e735"/>
+				<reportElement x="233" y="53" width="100" height="20" uuid="8c4dda20-d21d-4e05-9bf9-074f50b3e735"/>
 				<textFieldExpression><![CDATA[$F{PROMEDIO}]]></textFieldExpression>
 			</textField>
 		</band>

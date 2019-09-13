@@ -35,10 +35,6 @@ AND JUGADOR."TIPODOCUMENTOJUGADOR" LIKE UPPER($P{TIPODOCUMENTOJUGADOR})]]>
 	</background>
 	<title>
 		<band height="109" splitType="Stretch">
-			<image>
-				<reportElement x="0" y="0" width="161" height="98" uuid="7f9c6f10-f7c9-43d2-9fdb-5fc638e7e998"/>
-				<imageExpression><![CDATA["C:\\Users\\Sergop\\Documents\\NetBeansProjects\\reportes-campeonato\\Campeonato\\img\\logo_Unibague_300x233.jpg"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="161" y="38" width="302" height="40" uuid="848569f6-ba48-4cc3-bd5a-5e4061d8ae0b"/>
 				<textElement textAlignment="Center">
