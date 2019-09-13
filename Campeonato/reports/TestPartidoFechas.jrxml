@@ -11,17 +11,15 @@
 	</parameter>
 	<queryString>
 		<![CDATA[SELECT
-     TO_CHAR(campeonato.partido.fecha,'DD/MM/YYYY hh24:mi') AS FECHA,
-     PARTIDO."idpartido" AS FECHA,
-     PARTIDO."fklocal" AS FECHA,
-     PARTIDO."fkvisitante" AS FECHA,
-     PARTIDO."goleslocal" AS FECHA,
-     PARTIDO."golesvisitante" AS FECHA
+    campeonato.partido.idpartido,
+    campeonato.partido.fklocal,
+    campeonato.partido.fkvisitante,
+    campeonato.partido.goleslocal,
+    campeonato.partido.golesvisitante,
+    TO_CHAR( campeonato.partido.fecha, 'DD/MM/YYYY hh24:mi') as fecha
 FROM
-     "CAMPEONATO"."PARTIDO" PARTIDO
-WHERE
-     UPPER(campeonato.partido.edicioncampeonato) = UPPER($P{EDICIONCAMPEONATO})
-     and TO_CHAR(campeonato.partido.fecha,'DD/MM/YYYY hh24:mi') = $P{FECHA}]]>
+    campeonato.partido
+WHERE UPPER(campeonato.partido.edicioncampeonato) = UPPER($P{EDICIONCAMPEONATO}) and TO_CHAR( campeonato.partido.fecha, 'DD/MM/YYYY hh24:mi') = $P{FECHA}]]>
 	</queryString>
 	<field name="IDPARTIDO" class="java.math.BigDecimal"/>
 	<field name="FKLOCAL" class="java.math.BigDecimal"/>
