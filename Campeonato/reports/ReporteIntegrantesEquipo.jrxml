@@ -58,6 +58,13 @@ WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONAT
 		<band height="77" splitType="Stretch">
 			<staticText>
 				<reportElement mode="Opaque" x="1" y="57" width="64" height="20" backcolor="#D6D6D6" uuid="c34d2269-8177-4857-9a71-6bc8c464b094"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
@@ -65,6 +72,13 @@ WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONAT
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="146" y="57" width="72" height="20" backcolor="#D6D6D6" uuid="02576ed8-5a91-4a3d-8a9e-70c5a81edc7b"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
@@ -72,6 +86,13 @@ WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONAT
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="218" y="57" width="61" height="20" backcolor="#D6D6D6" uuid="cba679a1-6934-406f-8825-c24e7a542dc9"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
@@ -79,6 +100,13 @@ WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONAT
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="279" y="57" width="61" height="20" backcolor="#D6D6D6" uuid="74daae38-516d-49b5-a8b0-9ec22b6f97bf"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
@@ -86,6 +114,13 @@ WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONAT
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="340" y="57" width="61" height="20" backcolor="#D6D6D6" uuid="e38556c1-551b-4625-b11a-90b92755598f"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
@@ -93,6 +128,13 @@ WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONAT
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="401" y="57" width="81" height="20" backcolor="#D6D6D6" uuid="407ae716-fa3f-421b-a433-f1382b7ac5fb"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
@@ -100,6 +142,13 @@ WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONAT
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="482" y="57" width="74" height="20" backcolor="#D6D6D6" uuid="2b134fea-5693-4d26-b4b3-dd74dcf701c3"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
@@ -107,6 +156,13 @@ WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONAT
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="65" y="57" width="81" height="20" backcolor="#D6D6D6" uuid="99d9e090-2d9e-4af3-9437-9eedf03bdcb0"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
@@ -125,6 +181,13 @@ WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONAT
 		<band height="95" splitType="Stretch">
 			<textField>
 				<reportElement x="64" y="0" width="81" height="34" uuid="690c3076-6f5e-459b-bc8c-e9caf41faa81"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
@@ -132,6 +195,13 @@ WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONAT
 			</textField>
 			<textField>
 				<reportElement x="0" y="0" width="64" height="34" uuid="3cfe1e30-12e1-44d9-8ebf-99cbd04c4d94"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
@@ -139,6 +209,13 @@ WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONAT
 			</textField>
 			<textField>
 				<reportElement x="145" y="0" width="72" height="34" uuid="961e506b-1119-48a2-8f8d-bba554e7700a"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
@@ -146,6 +223,13 @@ WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONAT
 			</textField>
 			<textField>
 				<reportElement x="217" y="0" width="61" height="34" uuid="baa62929-8344-415d-974b-2458dfe1e2e2"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
@@ -153,6 +237,13 @@ WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONAT
 			</textField>
 			<textField>
 				<reportElement x="278" y="0" width="61" height="34" uuid="00f7dc9d-1d86-4ab3-a793-d70b73a8fcc3"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
@@ -160,6 +251,13 @@ WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONAT
 			</textField>
 			<textField>
 				<reportElement x="339" y="0" width="61" height="34" uuid="1a013c8b-3d9d-4102-ba10-0fe5228546f1"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
@@ -167,6 +265,13 @@ WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONAT
 			</textField>
 			<textField>
 				<reportElement x="400" y="0" width="81" height="34" uuid="722eb05a-d79c-4799-876a-9e7fda54e8ab"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
@@ -174,6 +279,13 @@ WHERE UPPER(EQUIPO."NOMBRE") = UPPER($P{nombreEquipo}) AND UPPER(EQUIPOCAMPEONAT
 			</textField>
 			<textField>
 				<reportElement x="481" y="0" width="74" height="34" uuid="e257ee1a-8923-42dd-acb0-205cb3488b83"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
