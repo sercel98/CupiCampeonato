@@ -11,15 +11,17 @@
 	</parameter>
 	<queryString>
 		<![CDATA[SELECT
-    campeonato.partido.idpartido,
-    campeonato.partido.fklocal,
-    campeonato.partido.fkvisitante,
-    campeonato.partido.goleslocal,
-    campeonato.partido.golesvisitante,
-    TO_CHAR( campeonato.partido.fecha, 'DD/MM/YYYY hh24:mi') AS FECHA
+     TO_CHAR(campeonato.partido.fecha,'DD/MM/YYYY hh24:mi') AS FECHA,
+     PARTIDO."idpartido" AS FECHA,
+     PARTIDO."fklocal" AS FECHA,
+     PARTIDO."fkvisitante" AS FECHA,
+     PARTIDO."goleslocal" AS FECHA,
+     PARTIDO."golesvisitante" AS FECHA
 FROM
-    campeonato.partido
-WHERE UPPER(campeonato.partido.edicioncampeonato) = UPPER($P{EDICIONCAMPEONATO}) and TO_CHAR( campeonato.partido.fecha, 'DD/MM/YYYY hh24:mi') = $P{FECHA}]]>
+     "CAMPEONATO"."PARTIDO" PARTIDO
+WHERE
+     UPPER(campeonato.partido.edicioncampeonato) = UPPER($P{EDICIONCAMPEONATO})
+     and TO_CHAR(campeonato.partido.fecha,'DD/MM/YYYY hh24:mi') = $P{FECHA}]]>
 	</queryString>
 	<field name="IDPARTIDO" class="java.math.BigDecimal"/>
 	<field name="FKLOCAL" class="java.math.BigDecimal"/>
@@ -31,36 +33,70 @@ WHERE UPPER(campeonato.partido.edicioncampeonato) = UPPER($P{EDICIONCAMPEONATO})
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="107" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="161" height="98" uuid="91024501-d6b4-42c1-94aa-b9bdaf025ffa"/>
+				<imageExpression><![CDATA["C:\\Users\\Sergop\\Documents\\NetBeansProjects\\reportes-campeonato\\Campeonato\\img\\logo_Unibague_300x233.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="113" y="25" width="333" height="40" uuid="91b322c7-98f7-4f74-bc8f-85cf436ed613"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="26"/>
+				</textElement>
+				<text><![CDATA[Reporte de partido]]></text>
+			</staticText>
+		</band>
 	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch"/>
-	</pageHeader>
 	<columnHeader>
 		<band height="61" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="92" height="20" uuid="330db296-bacc-4201-a5a9-5bc2f8db6bde"/>
+				<reportElement mode="Opaque" x="0" y="41" width="92" height="20" backcolor="#D6D6D6" uuid="330db296-bacc-4201-a5a9-5bc2f8db6bde"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[IDPARTIDO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="92" y="0" width="92" height="20" uuid="c7b824ce-f2d0-4dd1-badf-c0fcc84313d3"/>
+				<reportElement mode="Opaque" x="92" y="41" width="92" height="20" backcolor="#D6D6D6" uuid="c7b824ce-f2d0-4dd1-badf-c0fcc84313d3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[FKLOCAL]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="184" y="0" width="92" height="20" uuid="f28546b7-fa47-4379-8020-0a627084f5a0"/>
+				<reportElement mode="Opaque" x="184" y="41" width="92" height="20" backcolor="#D6D6D6" uuid="f28546b7-fa47-4379-8020-0a627084f5a0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[FKVISITANTE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="276" y="0" width="92" height="20" uuid="5fa2e33b-f56e-4ff9-b9f1-ca8944c6d745"/>
+				<reportElement mode="Opaque" x="276" y="41" width="92" height="20" backcolor="#D6D6D6" uuid="5fa2e33b-f56e-4ff9-b9f1-ca8944c6d745"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[GOLESLOCAL]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="368" y="0" width="92" height="20" uuid="9019c370-e0ec-4d3e-b99a-e6ea085083a9"/>
+				<reportElement mode="Opaque" x="368" y="41" width="92" height="20" backcolor="#D6D6D6" uuid="9019c370-e0ec-4d3e-b99a-e6ea085083a9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[GOLESVISITANTE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="460" y="0" width="92" height="20" uuid="c04d97e1-81e2-4d7a-92f0-6e35c9e2ddb3"/>
+				<reportElement mode="Opaque" x="460" y="41" width="92" height="20" backcolor="#D6D6D6" uuid="c04d97e1-81e2-4d7a-92f0-6e35c9e2ddb3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="42" uuid="86e31eb0-136a-4480-8df4-e46cfa503ef7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[El resumen del partido realizado en la fecha buscada es: ]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -68,37 +104,46 @@ WHERE UPPER(campeonato.partido.edicioncampeonato) = UPPER($P{EDICIONCAMPEONATO})
 		<band height="125" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="0" width="92" height="20" uuid="a9c4fd30-b4f2-4280-a8bd-2b7f60f9770e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{IDPARTIDO}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="92" y="0" width="92" height="20" uuid="1fe447db-15cc-48e9-9866-788806eea41a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{FKLOCAL}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="184" y="0" width="92" height="20" uuid="dc8f9a33-7143-4585-8662-e80952c6cfaf"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{FKVISITANTE}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="276" y="0" width="92" height="20" uuid="1c8a4eb8-ba65-4e48-b3be-2bcc0d4eeba9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{GOLESLOCAL}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="368" y="0" width="92" height="20" uuid="c7a46b2e-4821-4678-82b2-cb1409366988"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{GOLESVISITANTE}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="460" y="0" width="92" height="20" uuid="07f226f4-d19c-4c18-84d9-e4ea91d7aabd"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{FECHA}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band height="54" splitType="Stretch"/>
-	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch"/>
-	</summary>
 </jasperReport>

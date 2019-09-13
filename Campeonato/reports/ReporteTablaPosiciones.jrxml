@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="67cad85f-3537-4652-9899-a322873c6e80">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="edicionCampeonato" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     EQUIPOCAMPEONATO."NITUNIVERSIDAD" AS EQUIPOCAMPEONATO_NITUNIVERSIDAD,
+     EQUIPOCAMPEONATO."EDICIONCAMPEONATO" AS EQUIPOCAMPEONATO_EDICIONCAMPEONATO,
+     EQUIPOCAMPEONATO."PUNTAJE" AS EQUIPOCAMPEONATO_PUNTAJE,
+     EQUIPOCAMPEONATO."GOLES" AS EQUIPOCAMPEONATO_GOLES,
+     EQUIPOCAMPEONATO."GOLESCONTRA" AS EQUIPOCAMPEONATO_GOLESCONTRA,
+     EQUIPO."NOMBRE" AS EQUIPO_NOMBRE
+FROM
+     "CAMPEONATO"."EQUIPO" EQUIPO INNER JOIN "CAMPEONATO"."EQUIPOCAMPEONATO" EQUIPOCAMPEONATO ON EQUIPO."NITUNIVERSIDAD" = EQUIPOCAMPEONATO."NITUNIVERSIDAD"
+WHERE
+     UPPER($P{edicionCampeonato}) = UPPER(EQUIPOCAMPEONATO."EDICIONCAMPEONATO")
+ORDER BY
+     EQUIPOCAMPEONATO."PUNTAJE" DESC]]>
+	</queryString>
+	<field name="EQUIPOCAMPEONATO_NITUNIVERSIDAD" class="java.math.BigDecimal"/>
+	<field name="EQUIPOCAMPEONATO_EDICIONCAMPEONATO" class="java.lang.String"/>
+	<field name="EQUIPOCAMPEONATO_PUNTAJE" class="java.math.BigDecimal"/>
+	<field name="EQUIPOCAMPEONATO_GOLES" class="java.math.BigDecimal"/>
+	<field name="EQUIPOCAMPEONATO_GOLESCONTRA" class="java.math.BigDecimal"/>
+	<field name="EQUIPO_NOMBRE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="161" height="98" uuid="8cca8c40-acec-4b06-9c1b-9c475ffb9b69"/>
+				<imageExpression><![CDATA["C:\\Users\\Sergop\\Documents\\NetBeansProjects\\reportes-campeonato\\Campeonato\\img\\logo_Unibague_300x233.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="138" y="32" width="302" height="40" uuid="600cae3e-f4c5-4392-9bd8-4f91bda7f229"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="26"/>
+				</textElement>
+				<text><![CDATA[Tabla de posiciones]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="161" y="41" width="92" height="20" backcolor="#D6D6D6" uuid="9346b759-81c9-4ae1-911f-e6af526d5396"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PUNTOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="253" y="41" width="105" height="20" backcolor="#D6D6D6" uuid="e310d5d4-efab-4cea-afd6-ab2d5cfe42d5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GOLES A FAVOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="358" y="41" width="134" height="20" backcolor="#D6D6D6" uuid="bde7380a-0c27-4545-bc1a-d49ec2b3e360"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GOLES EN CONTRA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="69" y="41" width="92" height="20" backcolor="#D6D6D6" uuid="352f5c68-1977-4a8b-9805-336b677fa2b3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EQUIPO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="528" height="41" uuid="be0c6b96-fbc2-4c6f-8574-c090ddc92dde"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[La tabla actual de posiciones es: ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="161" y="0" width="92" height="33" uuid="3491b81c-1336-4ed0-812a-dfec821c2cd6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EQUIPOCAMPEONATO_PUNTAJE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="0" width="105" height="33" uuid="71d9379e-f211-4ba4-a1ec-48adfd8e22f0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EQUIPOCAMPEONATO_GOLES}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="358" y="0" width="134" height="33" uuid="32b72499-4a3e-4a8c-a8f4-f8442f288923"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EQUIPOCAMPEONATO_GOLESCONTRA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="69" y="0" width="92" height="33" uuid="387f9d4c-a2a4-4ac9-896a-6b4d2222a94c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EQUIPO_NOMBRE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
