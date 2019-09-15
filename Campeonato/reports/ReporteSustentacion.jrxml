@@ -24,8 +24,8 @@ FROM
                                       AND campeonato.alineacion.idtipojugador = campeonato.posicion.idtipojugadorjugador
     INNER JOIN campeonato.jugador ON campeonato.posicion.documentojugador = campeonato.jugador.documentojugador
 WHERE
-    campeonato.partido.fecha >= to_timestamp($P{FECHAINICIAL}) AND 
-        campeonato.partido.fecha <= to_timestamp($P{FECHAFINAL})
+    campeonato.partido.fecha >= to_timestamp($P{FECHAINICIAL},'DD/MM/YYYY hh24:mi') AND 
+        campeonato.partido.fecha <= to_timestamp($P{FECHAFINAL},'DD/MM/YYYY hh24:mi')
     AND campeonato.alineacion.documentojugador = $P{DOCUMENTOJUGADOR}]]>
 	</queryString>
 	<field name="FECHA" class="oracle.sql.TIMESTAMP"/>

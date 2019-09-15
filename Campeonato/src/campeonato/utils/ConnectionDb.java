@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 public class ConnectionDb {
     private static final String USER_DB = "CAMPEONATO";
     private static final String PASSWORD_DB = "ORACLE";
-    private static final String URL_DB = "jdbc:oracle:thin:@//localhost:1521/ORCLCDB.localdomain";
+    private static final String URL_DB = "jdbc:oracle:thin:@//localhost:1521/XE";
     private static ConnectionDb instance;
     private Connection connection;
     private ConnectionDb (){
